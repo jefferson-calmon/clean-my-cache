@@ -1,6 +1,11 @@
-# clean my cache
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.png">
+  <img alt="clean my cache: see what each cache is before you delete it" src=".github/assets/banner-light.png" width="100%">
+</picture>
 
 [Read in English](README.md)
+
+# clean my cache
 
 Libere gigabytes no seu Mac limpando o cache que ferramentas de desenvolvimento e apps deixam para trás, e **entenda o que é cada coisa antes de apagar**.
 

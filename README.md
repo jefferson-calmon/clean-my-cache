@@ -1,19 +1,22 @@
-# clean my cache
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.png">
+  <img alt="clean my cache: see what each cache is before you delete it" src=".github/assets/banner-light.png" width="100%">
+</picture>
+
+<p>
+  <a href="https://github.com/jefferson-calmon/clean-my-cache/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/jefferson-calmon/clean-my-cache?label=release&color=0395db"></a>
+  <a href="https://github.com/jefferson-calmon/clean-my-cache/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/jefferson-calmon/clean-my-cache/actions/workflows/ci.yml/badge.svg"></a>
+  <img alt="macOS" src="https://img.shields.io/badge/platform-macOS-15191e">
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-15191e"></a>
+</p>
 
 [Leia em português](README.pt-BR.md)
+
+# clean my cache
 
 Free up gigabytes on your Mac by cleaning the caches that developer tools and apps leave behind, and **see what each one is before you delete it**.
 
 ```
-Developer tools
-  + npm                                  1.4 GB  safe
-  + Playwright browsers                  1.0 GB  re-download
-  + Homebrew                             812 MB  safe
-
-Apps
-  + Slack                                1.3 GB  safe
-  ! VS Code                              929 MB  skipped, Visual Studio Code is open
-
 ┃ What should be cleaned?
 ┃ > ✓ npm                     1.4 GB  safe     Every package npm has ever downloaded...
 ┃   ✓ Slack                   1.3 GB  safe     Images and files from conversations...
