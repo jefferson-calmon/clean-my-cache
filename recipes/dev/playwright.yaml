@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: playwright
+name: "Playwright browsers"
+category: dev
+risk: redownload
+description: "Browsers used by Playwright tests. Run `npx playwright install` to get them back."
+paths:
+  - ~/Library/Caches/ms-playwright

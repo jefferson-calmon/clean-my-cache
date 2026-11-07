@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: cursor
+name: Cursor
+category: apps
+risk: safe
+app: Cursor
+description: "Editor caches and old update files. Settings and extensions are kept."
+preset: electron
+support_folder: Cursor
+paths:
+  - "~/Library/Application Support/Cursor/CachedData"

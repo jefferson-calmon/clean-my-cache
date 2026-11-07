@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: pip
+name: pip
+category: dev
+risk: safe
+description: "Python packages downloaded by pip."
+run: [pip3, cache, purge]
+measure:
+  - ~/Library/Caches/pip

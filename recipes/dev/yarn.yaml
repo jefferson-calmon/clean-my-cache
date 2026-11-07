@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: yarn
+name: Yarn
+category: dev
+risk: safe
+description: "Packages downloaded by Yarn. The next install downloads what it needs again."
+run: [yarn, cache, clean]
+measure:
+  - ~/Library/Caches/Yarn

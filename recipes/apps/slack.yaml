@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: slack
+name: Slack
+category: apps
+risk: safe
+app: Slack
+description: "Images and files from conversations you already opened. Messages stay on Slack's servers."
+preset: electron
+support_folder: Slack
+paths:
+  - "~/Library/Application Support/Slack/Service Worker/CacheStorage"
+  - ~/Library/Caches/com.tinyspeck.slackmacgap

@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: obsidian
+name: Obsidian
+category: apps
+risk: safe
+app: Obsidian
+description: "App caches only. Your vaults are never touched."
+preset: electron
+support_folder: obsidian

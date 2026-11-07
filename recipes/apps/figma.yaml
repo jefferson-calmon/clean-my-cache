@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: figma
+name: Figma
+category: apps
+risk: safe
+app: Figma
+description: "Fonts, images and files cached by the desktop app. Your designs live in the cloud."
+preset: electron
+support_folder: "Figma/DesktopProfile/*"
+paths:
+  - ~/Library/Caches/com.figma.Desktop

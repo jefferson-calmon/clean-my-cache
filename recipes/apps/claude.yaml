@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: claude
+name: Claude
+category: apps
+risk: safe
+app: Claude
+description: "Images, files and compiled code the app saved to open faster. Your account and data are kept."
+preset: electron
+support_folder: Claude
+paths:
+  - ~/Library/Caches/com.anthropic.claudefordesktop
+  - ~/Library/Caches/com.anthropic.claudefordesktop.ShipIt

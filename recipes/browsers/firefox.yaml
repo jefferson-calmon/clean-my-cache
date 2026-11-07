@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: firefox
+name: Firefox
+category: browsers
+risk: safe
+app: Firefox
+description: "Images, scripts and files from websites you visited. Passwords, history, bookmarks and logins are kept."
+paths:
+  - ~/Library/Caches/Firefox

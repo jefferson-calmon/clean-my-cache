@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: xcode
+name: "Xcode DerivedData"
+category: dev
+risk: redownload
+app: Xcode
+description: "Build output of every Xcode project. The next build of each project starts from scratch."
+paths:
+  - "~/Library/Developer/Xcode/DerivedData/*"

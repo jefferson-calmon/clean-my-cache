@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: puppeteer
+name: "Puppeteer browsers"
+category: dev
+risk: redownload
+description: "Chrome builds downloaded by Puppeteer. Reinstalling the package downloads them again."
+paths:
+  - ~/.cache/puppeteer

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jefferson-calmon/clean-my-cache/schema/recipe.schema.json",
+  "title": "clean-my-cache recipe",
+  "description": "Teaches clean-my-cache how to clean one app or tool.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "category", "risk", "description"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Lowercase kebab-case. Used in --only and explain. Never rename it after release."
+    },
+    "name": { "type": "string", "minLength": 1, "description": "Shown to people." },
+    "category": { "enum": ["dev", "browsers", "apps", "system"] },
+    "risk": {
+      "enum": ["safe", "redownload", "caution"],
+      "description": "safe: rebuilt automatically. redownload: nothing lost but slow to get back. caution: never selected by default."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20,
+      "description": "What it is and what happens after cleaning, in plain words."
+    },
+    "app": {
+      "type": "string",
+      "description": "Name of the .app in /Applications, without .app. The recipe is skipped while the app is open."
+    },
+    "platforms": {
+      "type": "array",
+      "items": { "enum": ["darwin", "linux"] },
+      "description": "Defaults to darwin."
+    },
+    "preset": {
+      "enum": ["electron"],
+      "description": "electron: adds Cache, Code Cache, GPUCache, DawnGraphiteCache and DawnWebGPUCache inside ~/Library/Application Support/<support_folder>."
+    },
+    "support_folder": {
+      "type": "string",
+      "description": "Folder inside ~/Library/Application Support used by the preset. * matches one folder level."
+    },
+    "paths": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^~/" },
+      "description": "Folders to delete. Start with ~/. * matches one folder level."
+    },
+    "paths_from": { "$ref": "#/$defs/dynamicPath", "description": "Folders found by running a command." },
+    "run": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "The tool's own clean command, as a program and its arguments. Never a shell."
+    },
+    "measure": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^~/" },
+      "description": "Folders used to show the size before and after the command."
+    },
+    "measure_from": { "$ref": "#/$defs/dynamicPath" },
+    "precheck": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "Command that must succeed before run, like [docker, info]."
+    },
+    "unavailable_hint": { "type": "string", "description": "Shown when the precheck fails." }
+  },
+  "$defs": {
+    "dynamicPath": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command"],
+      "properties": {
+        "command": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "Command that prints one folder path."
+        },
+        "siblings": {
+          "type": "string",
+          "description": "Use the folders next to the printed one that match this pattern, excluding the printed folder itself."
+        }
+      }
+    }
+  },
+  "oneOf": [
+    { "required": ["run"], "not": { "anyOf": [{ "required": ["paths"] }, { "required": ["preset"] }, { "required": ["paths_from"] }] } },
+    { "anyOf": [{ "required": ["paths"] }, { "required": ["preset"] }, { "required": ["paths_from"] }], "not": { "required": ["run"] } }
+  ]
+}

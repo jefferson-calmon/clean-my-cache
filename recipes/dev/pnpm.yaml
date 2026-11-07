@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: pnpm
+name: "pnpm store (unused packages)"
+category: dev
+risk: safe
+description: "Removes only packages that no project references anymore. Your projects keep working."
+run: [pnpm, store, prune]
+measure_from:
+  command: [pnpm, store, path]

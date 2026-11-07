@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: notion
+name: Notion
+category: apps
+risk: safe
+app: Notion
+description: "Images, files and compiled code the app saved to open faster. Your account and data are kept."
+preset: electron
+support_folder: Notion

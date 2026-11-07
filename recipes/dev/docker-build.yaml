@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: docker-build
+name: "Docker build cache"
+category: dev
+risk: redownload
+description: "Layers saved to speed up docker build. The next build of each image is slower."
+run: [docker, builder, prune, --all, --force]
+precheck: [docker, info]
+unavailable_hint: "Docker is not running. Open Docker Desktop and run again."

@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: node-tooling
+name: "Node tooling caches"
+category: dev
+risk: safe
+description: "Headers for native modules (node-gyp) and type definitions fetched by editors (typescript)."
+paths:
+  - ~/Library/Caches/node-gyp
+  - ~/Library/Caches/typescript

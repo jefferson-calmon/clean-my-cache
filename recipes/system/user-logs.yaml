@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: user-logs
+name: "App logs"
+category: system
+risk: caution
+description: "Log files written by apps. Useful when you need to report a bug, otherwise safe to remove."
+paths:
+  - "~/Library/Logs/*"

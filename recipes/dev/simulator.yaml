@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: simulator
+name: "iOS Simulator caches"
+category: dev
+risk: safe
+app: Simulator
+description: "Temporary files from the iOS Simulator. Your simulators and apps stay installed."
+paths:
+  - "~/Library/Developer/CoreSimulator/Caches/*"

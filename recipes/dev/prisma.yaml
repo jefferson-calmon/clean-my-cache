@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: prisma
+name: "Prisma engines"
+category: dev
+risk: safe
+description: "Engine binaries for every Prisma version you used. `prisma generate` downloads the one it needs."
+paths:
+  - ~/.cache/prisma

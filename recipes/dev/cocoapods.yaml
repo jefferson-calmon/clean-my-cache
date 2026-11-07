@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: cocoapods
+name: CocoaPods
+category: dev
+risk: safe
+description: "Pods downloaded by CocoaPods."
+paths:
+  - ~/Library/Caches/CocoaPods

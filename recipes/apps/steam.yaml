@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: steam
+name: Steam
+category: apps
+risk: safe
+app: Steam
+description: "Store and library artwork. Games and saves are kept."
+paths:
+  - ~/Library/Caches/Steam

@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: npm
+name: npm
+category: dev
+risk: safe
+description: "Every package npm has ever downloaded. The next install downloads what it needs again."
+run: [npm, cache, clean, --force]
+measure:
+  - ~/.npm/_cacache

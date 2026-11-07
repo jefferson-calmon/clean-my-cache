@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: uv
+name: uv
+category: dev
+risk: safe
+description: "Python packages and interpreters cached by uv."
+run: [uv, cache, clean]
+measure:
+  - ~/.cache/uv

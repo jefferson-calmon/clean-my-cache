@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: arc
+name: Arc
+category: browsers
+risk: safe
+app: Arc
+description: "Images, scripts and files from websites you visited. Passwords, history, bookmarks and logins are kept."
+paths:
+  - ~/Library/Caches/Arc
+  - ~/Library/Caches/company.thebrowser.Browser

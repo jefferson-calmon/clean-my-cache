@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: docker-images
+name: "Docker dangling images"
+category: dev
+risk: caution
+description: "Untagged images left behind by rebuilds. Tagged images and containers are kept."
+run: [docker, image, prune, --force]
+precheck: [docker, info]
+unavailable_hint: "Docker is not running. Open Docker Desktop and run again."

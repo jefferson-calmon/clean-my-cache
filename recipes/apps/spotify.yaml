@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: spotify
+name: Spotify
+category: apps
+risk: safe
+app: Spotify
+description: "Songs and artwork cached for faster playback. Downloaded playlists may need to download again."
+paths:
+  - ~/Library/Caches/com.spotify.client
+  - "~/Library/Application Support/Spotify/PersistentCache"

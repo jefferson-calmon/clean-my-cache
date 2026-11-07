@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: bun
+name: Bun
+category: dev
+risk: safe
+description: "Packages downloaded by Bun. The next install downloads what it needs again."
+run: [bun, pm, cache, rm]
+measure:
+  - ~/.bun/install/cache

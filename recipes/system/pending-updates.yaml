@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: pending-updates
+name: "Downloaded app updates"
+category: system
+risk: safe
+description: "Update files that apps downloaded and never installed. Each app downloads its update again."
+paths:
+  - "~/Library/Caches/*-updater"
+  - "~/Library/Caches/*.ShipIt"

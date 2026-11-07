@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: brew
+name: Homebrew
+category: dev
+risk: safe
+description: "Installers of packages you already installed, plus old versions. Homebrew never needs them again."
+run: [brew, cleanup, "--prune=all", -s]
+measure:
+  - ~/Library/Caches/Homebrew

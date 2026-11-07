@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: pnpm-old-stores
+name: "pnpm stores from older versions"
+category: dev
+risk: safe
+description: "Stores left by previous pnpm major versions. The pnpm you have installed no longer reads them."
+paths_from:
+  command: [pnpm, store, path]
+  siblings: "v*"

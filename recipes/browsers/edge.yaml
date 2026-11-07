@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: edge
+name: "Microsoft Edge"
+category: browsers
+risk: safe
+app: "Microsoft Edge"
+description: "Images, scripts and files from websites you visited. Passwords, history, bookmarks and logins are kept."
+paths:
+  - "~/Library/Caches/Microsoft Edge"

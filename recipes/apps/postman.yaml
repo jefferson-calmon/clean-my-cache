@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: postman
+name: Postman
+category: apps
+risk: safe
+app: Postman
+description: "Images, files and compiled code the app saved to open faster. Your account and data are kept."
+preset: electron
+support_folder: Postman

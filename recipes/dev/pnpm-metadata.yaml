@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: pnpm-metadata
+name: "pnpm metadata"
+category: dev
+risk: safe
+description: "Cached package metadata and pnpm dlx downloads."
+paths:
+  - ~/Library/Caches/pnpm

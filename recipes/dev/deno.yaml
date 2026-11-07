@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: deno
+name: Deno
+category: dev
+risk: safe
+description: "Remote modules and compiled code cached by Deno."
+run: [deno, clean]
+measure:
+  - ~/Library/Caches/deno

@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: vscode
+name: "VS Code"
+category: apps
+risk: safe
+app: "Visual Studio Code"
+description: "Editor caches, old update files and downloaded extension installers. Settings and extensions are kept."
+preset: electron
+support_folder: Code
+paths:
+  - "~/Library/Application Support/Code/CachedData"
+  - "~/Library/Application Support/Code/CachedExtensionVSIXs"
+  - ~/Library/Caches/com.microsoft.VSCode
+  - ~/Library/Caches/com.microsoft.VSCode.ShipIt

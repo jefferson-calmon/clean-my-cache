@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../schema/recipe.schema.json
+id: go
+name: "Go build cache"
+category: dev
+risk: redownload
+description: "Compiled Go packages. The next build is slower while the cache is rebuilt."
+run: [go, clean, -cache]
+measure:
+  - ~/Library/Caches/go-build
