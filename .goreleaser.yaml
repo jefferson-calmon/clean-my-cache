@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+version: 2
+
+project_name: clean-my-cache
+
+before:
+  hooks:
+    - go mod tidy
+    - go test ./...
+    - ./scripts/completions.sh
+
+builds:
+  - main: ./cmd/clean-my-cache
+    binary: clean-my-cache
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X main.version={{ .Version }}
+
+archives:
+  - formats: [tar.gz]
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - LICENSE
+      - README.md
+      - completions/*
+
+release:
+  github:
+    owner: jefferson-calmon
+    name: clean-my-cache
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+
+homebrew_casks:
+  - name: clean-my-cache
+    repository:
+      owner: jefferson-calmon
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    homepage: https://github.com/jefferson-calmon/clean-my-cache
+    description: Find and safely clean developer and app caches on macOS
+    license: MIT
+    completions:
+      bash: completions/clean-my-cache.bash
+      zsh: completions/clean-my-cache.zsh
+      fish: completions/clean-my-cache.fish
+    hooks:
+      post:
+        install_steps: |
+          run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/clean-my-cache"]
