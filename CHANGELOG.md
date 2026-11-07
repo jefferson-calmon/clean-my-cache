@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Fix the Homebrew cask, which Homebrew could not read in 0.1.0
+
 ## 0.1.0
 
 - Single binary for macOS (Apple Silicon and Intel), distributed with Homebrew, an install script and `go install`
