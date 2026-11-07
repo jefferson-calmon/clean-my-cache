@@ -1,0 +1,22 @@
+name: Add an app or tool
+description: Ask for clean-my-cache to support a new app or developer tool
+labels: [recipe]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App or tool
+      placeholder: Linear, Bun, Android Studio...
+    validations:
+      required: true
+  - type: textarea
+    id: folders
+    attributes:
+      label: Cache folders you found
+      description: Paths and sizes, for example from `du -sh ~/Library/Caches/*`
+      placeholder: "~/Library/Caches/com.example.app  420 MB"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Does the tool have its own clean command? Is anything in there worth keeping?
